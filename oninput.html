@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+
+    <style>
+        .app{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: red;
+        }
+        form{
+            border: 2px solid ;
+            padding: 10%;
+            border-radius: 20%;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="app">
+        <form >
+            <span>
+              <h3>Fahrenheit to Celsius</h3>
+              <input type="number" id="f">
+              <label for="">*F</label>
+            </span>
+            <br>
+            <br>
+            <span>
+            <h3>Celsius to Fahrenheit</h3>
+            <input type="number" id="c">
+            <label for="">*C</label>
+        </span>
+        <br>
+        <br>
+        <!-- <button onclick="degree()">check</button>
+        <button onclick="reset()">Reset</button> -->
+      </form>
+    </div>
+
+
+    <script>
+        let f=document.getElementById('f');
+        let c=document.getElementById('c');
+        
+        function ftc(){
+            var formula=(f.value-32)*(5/9);
+                c.value=formula;
+                event.preventDefault()
+                console.log(formula); 
+        }
+        function ctf(){
+            var formula=((c.value*9)/5)+32;
+                f.value=formula;
+                event.preventDefault()
+                console.log(formula);
+        }
+        f.addEventListener('input',ftc);
+        c.addEventListener('input',ctf);
+       
+    </script>
+
+</body>
+</html>
